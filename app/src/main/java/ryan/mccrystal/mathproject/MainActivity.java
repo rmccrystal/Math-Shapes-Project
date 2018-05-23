@@ -3,6 +3,9 @@ package ryan.mccrystal.mathproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import ryan.mccrystal.mathproject.Fragments.SquareFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,11 +72,10 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Intent intent = null;
+        Fragment fragment = null;
         if (id == R.id.nav_square) {
-            //intent = new Intent(this, SquareFragment.class);
+            fragment = new SquareFragment();
         } else if (id == R.id.nav_rectangle) {
 
         } else if (id == R.id.nav_triangle) {
@@ -87,8 +91,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sphere) {
 
         }
-        if (intent != null) {
-            startActivity(intent);
+        if(fragment != null) {
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+
+            ft.replace(R.id.screen_area, fragment);
+
+            ft.commit();
         }
 
 
