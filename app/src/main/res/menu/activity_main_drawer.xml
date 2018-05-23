@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="2D Shapes">
+        <menu>
+        <item
+            android:id="@+id/nav_square"
+            android:title="Square" />
+        <item
+            android:id="@+id/nav_rectangle"
+            android:title="Rectangle" />
+        <item
+            android:id="@+id/nav_triangle"
+            android:title="Triangle" />
+        <item
+            android:id="@+id/nav_circle"
+            android:title="Circle" />
+        </menu>
+    </item>
+
+    <item android:title="3D Shapes">
+        <menu>
+        <item
+            android:id="@+id/nav_cube"
+            android:title="Cube" />
+        <item
+            android:id="@+id/nav_pyramid"
+            android:title="Pyramid" />
+        <item
+            android:id="@+id/nav_cylinder"
+            android:title="Cylinder" />
+        <item
+            android:id="@+id/nav_sphere"
+            android:title="Sphere" />
+        </menu>
+    </item>
+
+</menu>
